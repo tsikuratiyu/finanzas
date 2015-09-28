@@ -26,6 +26,16 @@ class Solicitudes extends \yii\db\ActiveRecord
         return 'solicitudes';
     }
 
+    public function getSolicitante()
+    {
+        return $this->hasOne(Solicitantes::className(), ['id' => 'id']);
+    }
+
+    public function getSolicitanteName() {
+         return $this->Solicitantes->name;
+    }
+ 
+
     /**
      * @inheritdoc
      */

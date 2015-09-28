@@ -15,10 +15,13 @@ class BuscarSolicitudes extends Solicitudes
     /**
      * @inheritdoc
      */
+    public $solicitanteName;
+
     public function rules()
     {
         return [
             [['id'], 'integer'],
+            [['solicitanteName'],'safe'],
             [['titulo', 'fecha', 'solicitante', 'monto', 'comentario', 'usuario', 'fecha_actualizacion'], 'safe'],
         ];
     }

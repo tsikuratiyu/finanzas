@@ -2,6 +2,7 @@
 use dosamigos\datepicker\DateRangepicker;
 use yii\db\query;
 use backend\models\Solicitudes;
+use backend\models\Solicitantes;
 use dosamigos\chartjs\ChartJs;
 
 $rangop = DateRangePicker::widget([
@@ -24,9 +25,11 @@ $this->title = 'Admin';
     <div class="body-content">
 
         <div class="row">
+              </div><!-- /.info-box -->
+            </div>
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="info-box">
-                <span class="info-box-icon bg-blue"><i class="fa fa-file-text-o"></i></span>
+                <span class="info-box-icon bg-red"><i class="fa fa-cogs"></i></span>
                 <div class="info-box-content">
                   <span class="info-box-text">Recibidas</span>
                   <span class="info-box-number"><?= $recibidas?></span>
@@ -68,7 +71,7 @@ $this->title = 'Admin';
                     <?php echo $rangop;?>
                     </div>
                   <div class="box-tools pull-right">
-                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                    <button class="btn bn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                   </div>
                 </div><!-- /.box-header -->
@@ -76,7 +79,7 @@ $this->title = 'Admin';
                   <div class="row">
                     <div class="col-md-8">
                       <p class="text-center">
-                        <strong>Sales: 1 Jan, 2014 - 30 Jul, 2014</strong>
+                        <strong>Solicitudes: 1 Jan, 2014 - 30 Jul, 2014</strong>
                       </p>
                       <div class="chart">
                         <!-- Sales Chart Canvas -->
@@ -87,14 +90,16 @@ $this->title = 'Admin';
                                     'height' => 150,
                                     'width' => 400
                                 ],
-                                'data' => [
+                                  'data' => [
+
+
+
                                     'labels' => ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio"],
                                     'datasets' => [
                                         [
                                             'fillColor' => "rgba(151,187,205,0.5)",
                                             'strokeColor' => "rgba(151,187,205,1)",
-                                            'pointColor' => "rgba(151,187,205,1)",
-                                            'pointStrokeColor' => "#fff",
+                                                       'pointStrokeColor' => "#fff",
                                             'data' => [4, 2, 8, 5, 8, 1, 7]
                                         ],
                                         [
@@ -108,45 +113,45 @@ $this->title = 'Admin';
                                 ]
                             ]);
                             ?>
-                       
+                          
                       </div><!-- /.chart-responsive -->
                     </div><!-- /.col -->
                     <div class="col-md-4">
-                      <p class="text-center">
-                        <strong>Goal Completion</strong>
+                       <p class="text-center">
+                        <strong>Progreso general</strong>
                       </p>
-                      <div class="progress-group">
-                        <span class="progress-text">Add Products to Cart</span>
+                    <div class="progress-group">
+                       <span class="progress-text">Recepción de Solicitudes</span>
                         <span class="progress-number"><b>160</b>/200</span>
                         <div class="progress sm">
                           <div class="progress-bar progress-bar-aqua" style="width: 80%"></div>
                         </div>
                       </div><!-- /.progress-group -->
                       <div class="progress-group">
-                        <span class="progress-text">Complete Purchase</span>
-                        <span class="progress-number"><b>310</b>/400</span>
+                        <span class="progress-text">Unidad de Contabilidad</span>
+                        <span class="progress-number"><b>100</b>/200</span>
                         <div class="progress sm">
-                          <div class="progress-bar progress-bar-red" style="width: 80%"></div>
+                          <div class="progress-bar progress-bar-red" style="width: 50%"></div>
                         </div>
                       </div><!-- /.progress-group -->
                       <div class="progress-group">
-                        <span class="progress-text">Visit Premium Page</span>
-                        <span class="progress-number"><b>480</b>/800</span>
+                        <span class="progress-text">Unidad de Presupuesto</span>
+                        <span class="progress-number"><b>185</b>/200</span>
                         <div class="progress sm">
-                          <div class="progress-bar progress-bar-green" style="width: 80%"></div>
-                        </div>
+                          <div class="progress-bar progress-bar-green" style="width: 70%"></div>
+                        </div>      
                       </div><!-- /.progress-group -->
-                      <div class="progress-group">
-                        <span class="progress-text">Send Inquiries</span>
-                        <span class="progress-number"><b>250</b>/500</span>
+                        <div class="progress-group">
+                        <span class="progress-text">Cheques</span>
+                        <span class="progress-number"><b>200</b>/200</span>
                         <div class="progress sm">
-                          <div class="progress-bar progress-bar-yellow" style="width: 80%"></div>
+                          <div class="progress-bar progress-bar-yellow" style="width: 100%"></div>
                         </div>
                       </div><!-- /.progress-group -->
                     </div><!-- /.col -->
                   </div><!-- /.row -->
                 </div><!-- ./box-body -->
-                <div class="box-footer">
+                                <div class="box-footer">
                   <div class="row">
                     <div class="col-sm-3 col-xs-6">
                       <div class="description-block border-right">

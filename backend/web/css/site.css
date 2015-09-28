@@ -20,7 +20,10 @@ body {
     border-top: 1px solid #ddd;
     padding-top: 20px;
 }
-
+.espacio
+{
+    height: 15px;
+}
 .jumbotron {
     text-align: center;
     background-color: transparent;

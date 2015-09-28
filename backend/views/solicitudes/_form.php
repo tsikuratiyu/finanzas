@@ -3,6 +3,10 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use dosamigos\datepicker\DatePicker;
+use backend\models\Solicitantes;
+use yii\helpers\ArrayHelper;
+use kartik\select2\Select2;
+
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Solicitudes */
@@ -24,8 +28,16 @@ use dosamigos\datepicker\DatePicker;
         ]
     ]);?>
 
-    <?= $form->field($model, 'solicitante')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'solicitante')->widget(Select2::classname(), [
+            'data' => ArrayHelper::map(Solicitantes::find()->all(), 'id', 'name'),
+            'language' => 'de',
+            'options' => ['placeholder' => 'Selecciona..'],
+            'pluginOptions' => [
+                'allowClear' => false
+            ],
+        ]); ?>
 
+   
     <?= $form->field($model, 'monto')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'comentario')->textInput(['maxlength' => true]) ?>
